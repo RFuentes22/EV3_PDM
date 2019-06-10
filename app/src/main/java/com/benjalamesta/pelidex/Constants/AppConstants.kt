@@ -5,7 +5,7 @@ import com.benjalamesta.pelidex.BuildConfig
 import com.benjalamesta.pelidex.Models.Movie
 import com.benjalamesta.pelidex.Models.MoviePreview
 
-object Constants {
+object AppConstants {
 
     val ombdApiKey = BuildConfig.OMBD_API_KEY
     val ADD_TASK_REQUEST = 1

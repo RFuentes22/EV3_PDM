@@ -10,7 +10,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.benjalamesta.pelidex.Adapters.RVMovieAdapter
-import com.benjalamesta.pelidex.Constants.Constants
+import com.benjalamesta.pelidex.Constants.AppConstants
 import com.benjalamesta.pelidex.Models.Movie
 import com.benjalamesta.pelidex.R
 import com.benjalamesta.pelidex.ViewModel.MovieViewModel
@@ -67,9 +67,9 @@ class MainListFragment : Fragment(){
         val recyclerview  = container.rv_list
 
         moviesAdapter = if (orientation == Configuration.ORIENTATION_PORTRAIT) {
-            RVMovieAdapter(movies = Constants.emptymovies, clickListener = { movie: Movie -> listener?.managePortraitItemClick(movie)})
+            RVMovieAdapter(movies = AppConstants.emptymovies, clickListener = { movie: Movie -> listener?.managePortraitItemClick(movie)})
         }else {
-            RVMovieAdapter(movies = Constants.emptymovies, clickListener = { movie: Movie -> listener?.managedLandscapeItemClick(movie)})
+            RVMovieAdapter(movies = AppConstants.emptymovies, clickListener = { movie: Movie -> listener?.managedLandscapeItemClick(movie)})
         }
 
         recyclerview.apply {

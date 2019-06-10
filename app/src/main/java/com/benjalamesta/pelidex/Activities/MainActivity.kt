@@ -5,6 +5,7 @@ import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import com.benjalamesta.pelidex.Constants.AppConstants
 import com.benjalamesta.pelidex.Fragments.MainContentFragment
 import com.benjalamesta.pelidex.Fragments.MainListFragment
 import com.benjalamesta.pelidex.Models.Movie

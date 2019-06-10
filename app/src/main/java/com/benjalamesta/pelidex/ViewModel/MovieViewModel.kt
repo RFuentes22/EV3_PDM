@@ -6,6 +6,8 @@ import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.benjalamesta.pelidex.Database.MainDataBase
+import com.benjalamesta.pelidex.Models.MoviePreview
 import com.benjalamesta.pelidex.Network.ApiFactory
 import com.benjalamesta.pelidex.Repository.MovieRepository
 import kotlinx.coroutines.CoroutineScope
@@ -17,7 +19,8 @@ class MovieViewModel(val app: Application) : AndroidViewModel(app) {
     private val repository: MovieRepository
 
     init {
-        val movieDao = MainDatabase.getDatabase(app).movieDao()
+
+        val movieDao = MainDataBase.getDatabase(app).movieDao()
         repository = MovieRepository(movieDao, ApiFactory.ombdApi)
     }
 
@@ -62,9 +65,9 @@ class MovieViewModel(val app: Application) : AndroidViewModel(app) {
         repository.insert(movie)
     }
 
-    fun getAll(): LiveData<List<Movie>> = repository.getAllfromRoomDB()
+    fun getAll(): LiveData<List<com.benjalamesta.pelidex.Models.Movie>> = repository.getAllfromRoomDB()
 
-    fun getMovieByName(name: String): LiveData<List<Movie>> = repository.getMovieByName(name)
+    fun getMovieByName(name: String): LiveData<List<com.benjalamesta.pelidex.Models.Movie>> = repository.getMovieByName(name)
 
 
 }

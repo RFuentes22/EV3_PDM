@@ -4,6 +4,8 @@ import android.graphics.Movie
 import androidx.annotation.WorkerThread
 import androidx.lifecycle.LiveData
 import com.benjalamesta.pelidex.Database.Domain.MovieDao
+import com.benjalamesta.pelidex.Models.OmbdMovieResponse
+import com.benjalamesta.pelidex.Network.OmbdApi
 import kotlinx.coroutines.Deferred
 import retrofit2.Response
 
@@ -16,7 +18,7 @@ class MovieRepository(private val movieDao: MovieDao, private val api: OmbdApi){
     @WorkerThread
     suspend fun insert(movie: Movie) = movieDao.insertMovie(movie)
 
-    fun getAllfromRoomDB(): LiveData<List<Movie>> = movieDao.loadAllMovies()
+    fun getAllfromRoomDB(): LiveData<List<com.benjalamesta.pelidex.Models.Movie>> = movieDao.loadAllMovies()
 
     fun getMovieByName(name: String) = movieDao.searchMovieByName(name)
 }

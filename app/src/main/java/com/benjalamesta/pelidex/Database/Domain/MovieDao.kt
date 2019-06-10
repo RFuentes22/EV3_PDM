@@ -12,10 +12,10 @@ import com.benjalamesta.pelidex.Models.Movie
 interface MovieDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertMovie(movie: Movie)
+    suspend fun insertMovie(movie: android.graphics.Movie)
 
     @Query("select * from Movie")
-    fun allMovies(): LiveData<List<Movie>>
+    fun loadAllMovies(): LiveData<List<Movie>>
 
     @Query("select * from Movie where Title like :name")
     fun searchMovieByName(name: String): LiveData<List<Movie>>
