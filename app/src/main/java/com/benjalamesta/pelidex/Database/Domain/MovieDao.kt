@@ -12,7 +12,7 @@ import com.benjalamesta.pelidex.Models.Movie
 interface MovieDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertMovie(movie: android.graphics.Movie)
+    suspend fun insertMovie(movie: Movie)
 
     @Query("select * from Movie")
     fun loadAllMovies(): LiveData<List<Movie>>

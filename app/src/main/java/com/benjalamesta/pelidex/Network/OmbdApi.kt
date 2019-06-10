@@ -1,9 +1,9 @@
 package com.benjalamesta.pelidex.Network
 
-import android.graphics.Movie
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
+import com.benjalamesta.pelidex.Models.Movie
 import com.benjalamesta.pelidex.Models.OmbdMovieResponse
 import kotlinx.coroutines.Deferred
 import retrofit2.Response

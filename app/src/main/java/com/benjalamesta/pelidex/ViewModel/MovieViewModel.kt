@@ -1,12 +1,12 @@
 package com.benjalamesta.pelidex.ViewModel
 
 import android.app.Application
-import android.graphics.Movie
 import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.benjalamesta.pelidex.Database.MainDataBase
+import com.benjalamesta.pelidex.Models.Movie
 import com.benjalamesta.pelidex.Models.MoviePreview
 import com.benjalamesta.pelidex.Network.ApiFactory
 import com.benjalamesta.pelidex.Repository.MovieRepository

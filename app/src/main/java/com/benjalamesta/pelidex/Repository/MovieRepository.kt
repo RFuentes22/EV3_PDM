@@ -1,9 +1,9 @@
 package com.benjalamesta.pelidex.Repository
 
-import android.graphics.Movie
 import androidx.annotation.WorkerThread
 import androidx.lifecycle.LiveData
 import com.benjalamesta.pelidex.Database.Domain.MovieDao
+import com.benjalamesta.pelidex.Models.Movie
 import com.benjalamesta.pelidex.Models.OmbdMovieResponse
 import com.benjalamesta.pelidex.Network.OmbdApi
 import kotlinx.coroutines.Deferred
