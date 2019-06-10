@@ -65,7 +65,7 @@ class MovieViewModel(val app: Application) : AndroidViewModel(app) {
         repository.insert(movie)
     }
 
-    fun getAll(): LiveData<List<com.benjalamesta.pelidex.Models.Movie>> = repository.getAllfromRoomDB()
+    fun getAll(): LiveData<List<Movie>> = repository.getAllfromRoomDB()
 
     fun getMovieByName(name: String): LiveData<List<com.benjalamesta.pelidex.Models.Movie>> = repository.getMovieByName(name)
 

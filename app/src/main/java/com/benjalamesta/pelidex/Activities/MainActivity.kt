@@ -10,6 +10,11 @@ import com.benjalamesta.pelidex.Fragments.MainContentFragment
 import com.benjalamesta.pelidex.Fragments.MainListFragment
 import com.benjalamesta.pelidex.Models.Movie
 import com.benjalamesta.pelidex.R
+import kotlinx.android.synthetic.main.activity_main.*
+
+private lateinit var mainFragment: MainListFragment
+private lateinit var mainContentFragment: MainContentFragment
+private var resource = 0
 
 class MainActivity : AppCompatActivity(), MainListFragment.ClickedMovieListener {
 

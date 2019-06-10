@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.benjalamesta.pelidex.Models.MoviePreview
 import com.benjalamesta.pelidex.R
 import com.bumptech.glide.Glide
+import kotlinx.android.synthetic.main.cardview_preview.view.*
 
 class RVPreviewAdapter(var movies: List<MoviePreview>, val clickListener: (MoviePreview, View) -> Unit ) : RecyclerView.Adapter<RVPreviewAdapter.ViewHolder>() {
 

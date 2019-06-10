@@ -14,6 +14,7 @@ import com.benjalamesta.pelidex.Constants.AppConstants
 import com.benjalamesta.pelidex.Models.Movie
 import com.benjalamesta.pelidex.R
 import com.benjalamesta.pelidex.ViewModel.MovieViewModel
+import kotlinx.android.synthetic.main.movies_list_fragment.view.*
 import java.lang.RuntimeException
 
 class MainListFragment : Fragment(){
@@ -49,7 +50,7 @@ class MainListFragment : Fragment(){
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
-        val view = inflater.inflate(, container, false) //TODO[poner el xml de list fragment]
+        val view = inflater.inflate(R.layout.movies_list_fragment, container, false) //TODO[poner el xml de list fragment]
 
         movieViewModel = ViewModelProviders.of(this).get(MovieViewModel::class.java)
 

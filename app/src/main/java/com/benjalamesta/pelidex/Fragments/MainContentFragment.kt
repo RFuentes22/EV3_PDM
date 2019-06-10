@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import com.benjalamesta.pelidex.Models.Movie
 import com.benjalamesta.pelidex.R
 import com.bumptech.glide.Glide
+import kotlinx.android.synthetic.main.movie_viewer.view.*
 
 class MainContentFragment: Fragment(){
 
@@ -26,10 +27,6 @@ class MainContentFragment: Fragment(){
         super.onCreateView(inflater, container, savedInstanceState)
         val view = inflater.inflate(R.layout.movie_viewer, container, false)
 
-        view.collapsingtoolbarviewer.setExpandedTitleTextAppearance(R.style.ExpandedAppBar)
-        view.collapsingtoolbarviewer.setCollapsedTitleTextAppearance(R.style.CollapsedAppBar)
-
-
         bindData(view, movie)
 
         return view
@@ -41,7 +38,7 @@ class MainContentFragment: Fragment(){
             .placeholder(R.drawable.ic_launcher_background)
             .into(view.app_bar_image_viewer)
 
-        view.collapsingtoolbarviewer.title = data.Title
+        view.tv_movie_title.text = data.Title
         view.plot_viewer.text = data.Plot
         view.director_viewer.text = data.Director
         view.actors_viewer.text = data.Actors

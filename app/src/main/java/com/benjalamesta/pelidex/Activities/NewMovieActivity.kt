@@ -15,6 +15,7 @@ import com.benjalamesta.pelidex.Constants.AppConstants
 import com.benjalamesta.pelidex.Models.MoviePreview
 import com.benjalamesta.pelidex.R
 import com.benjalamesta.pelidex.ViewModel.MovieViewModel
+import kotlinx.android.synthetic.main.preview_add_movie.*
 
 class NewMovieActivity : AppCompatActivity() {
 
