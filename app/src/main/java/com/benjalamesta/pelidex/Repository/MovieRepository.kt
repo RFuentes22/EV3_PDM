@@ -16,7 +16,7 @@ class MovieRepository(private val movieDao: MovieDao, private val api: OmbdApi){
     fun retrieveMoviesByTitleAsync(name:String): Deferred<Response<Movie>> = api.getMovieByTitle(name)
 
     @WorkerThread
-    suspend fun insert(movie: Movie) = movieDao.insertMovie(movie)
+    suspend fun insert(movie: Movie) = movieDao.insertMovie(movie )
 
     fun getAllfromRoomDB(): LiveData<List<com.benjalamesta.pelidex.Models.Movie>> = movieDao.loadAllMovies()
 

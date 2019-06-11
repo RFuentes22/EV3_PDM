@@ -25,7 +25,7 @@ class NewMovieActivity : AppCompatActivity() {
 
         val MovieViewModel = ViewModelProviders.of(this).get(MovieViewModel::class.java)
 
-        val layoutManager = LinearLayoutManager(this, RecyclerView.HORIZONTAL, false)
+        val layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
         val recyclerView = rv_preview
         val moviesPreviewAdapter = RVPreviewAdapter(movies = AppConstants.emptymoviespreview,
             clickListener = { movie: MoviePreview, checky: View ->

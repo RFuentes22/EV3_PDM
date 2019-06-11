@@ -5,9 +5,16 @@
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:background="#F7F1F1"
+              android:layout_marginTop="10dp"
               android:orientation="vertical"
               android:padding="24dp">
-
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="@dimen/medium_gap"
+            android:layout_marginTop="@dimen/medium_gap"
+            android:layout_marginRight="@dimen/medium_gap"
+            android:background="#D8D4D4"/>
     <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -249,5 +256,11 @@
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
-
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="@dimen/medium_gap"
+            android:layout_marginTop="@dimen/medium_gap"
+            android:layout_marginRight="@dimen/medium_gap"
+            android:background="#D8D4D4"/>
 </LinearLayout>
