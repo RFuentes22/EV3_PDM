@@ -13,15 +13,22 @@ import androidx.recyclerview.widget.RecyclerView
 import com.benjalamesta.pelidex.Adapters.RVPreviewAdapter
 import com.benjalamesta.pelidex.Constants.AppConstants
 import com.benjalamesta.pelidex.Models.MoviePreview
-import com.benjalamesta.pelidex.R
 import com.benjalamesta.pelidex.ViewModel.MovieViewModel
 import kotlinx.android.synthetic.main.preview_add_movie.*
+import android.net.NetworkInfo
+import android.content.Context.CONNECTIVITY_SERVICE
+import androidx.core.content.ContextCompat.getSystemService
+import android.net.ConnectivityManager
+import android.R
+import android.content.Context
+import android.util.Log
+
 
 class NewMovieActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.preview_add_movie)
+        setContentView(com.benjalamesta.pelidex.R.layout.preview_add_movie)
 
         val MovieViewModel = ViewModelProviders.of(this).get(MovieViewModel::class.java)
 
@@ -79,4 +86,6 @@ class NewMovieActivity : AppCompatActivity() {
         et.text.clear()
         adapter.changeDataSet(AppConstants.emptymoviespreview)
     }
+
+
 }

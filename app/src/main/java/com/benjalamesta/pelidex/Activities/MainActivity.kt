@@ -1,9 +1,13 @@
 package com.benjalamesta.pelidex.Activities
 
+import android.content.Context
 import android.content.Intent
 import android.content.res.Configuration
+import android.net.ConnectivityManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.benjalamesta.pelidex.Constants.AppConstants
 import com.benjalamesta.pelidex.Fragments.MainContentFragment
@@ -22,6 +26,10 @@ class MainActivity : AppCompatActivity(), MainListFragment.ClickedMovieListener 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        if (!isNetworkAvailable()){
+            Toast.makeText(this, "No hay conexion a internet" , Toast.LENGTH_LONG).show()
+        }
+
         initFragments()
     }
 
@@ -37,7 +45,11 @@ class MainActivity : AppCompatActivity(), MainListFragment.ClickedMovieListener 
         }
 
         val intent = Intent(this, NewMovieActivity::class.java)
-        main_add_button.setOnClickListener { startActivityForResult(intent , AppConstants.ADD_TASK_REQUEST) }
+        main_add_button.setOnClickListener {
+
+
+            startActivityForResult(intent , AppConstants.ADD_TASK_REQUEST)
+        }
 
         changeFragment(resource, mainFragment)
     }
@@ -52,4 +64,10 @@ class MainActivity : AppCompatActivity(), MainListFragment.ClickedMovieListener 
     override fun managePortraitItemClick(movie: Movie) = showContent(R.id.portrait_main_place_holder, movie)
 
     override fun managedLandscapeItemClick(movie: Movie) = showContent(R.id.land_main_movieviewer_ph, movie)
+
+    private fun isNetworkAvailable(): Boolean {
+        val connectivityManager = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val activeNetworkInfo = connectivityManager.activeNetworkInfo
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected
+    }
 }
