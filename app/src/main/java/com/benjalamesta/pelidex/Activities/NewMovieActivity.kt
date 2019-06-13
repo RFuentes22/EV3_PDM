@@ -61,7 +61,7 @@ class NewMovieActivity : AppCompatActivity() {
 
         bt_cancel_preview.setOnClickListener {clearView(et_search_movie_preview, moviesPreviewAdapter)}
 
-        bt_add_preview_search.setOnClickListener {
+        bt_add_preview.setOnClickListener {
             val thenownow = MovieViewModel.getMovieListVM().value
             val selectedMovies = thenownow?.filter { it.selected } ?: AppConstants.emptymoviespreview
 

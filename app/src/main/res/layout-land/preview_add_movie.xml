@@ -43,13 +43,8 @@
     <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-<<<<<<< HEAD
-            android:clickable="true" app:srcCompat="@drawable/ic_check_black_24dp"
-            android:id="@+id/bt_add_preview_search" app:layout_constraintEnd_toEndOf="parent"
-=======
             android:clickable="true" app:srcCompat="@drawable/ic_baseline_add_box_24px"
             android:id="@+id/bt_add_preview" app:layout_constraintEnd_toEndOf="parent"
->>>>>>> 6cb2de387a57153e9d808190e23ee83eadd68755
             android:layout_marginEnd="8dp" android:layout_marginRight="8dp" android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="parent" app:backgroundTint="@color/colorPrimary"
             android:tint="@android:color/background_light" tools:ignore="VectorDrawableCompat"/>
