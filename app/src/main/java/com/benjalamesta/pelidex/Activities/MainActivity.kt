@@ -25,7 +25,6 @@ class MainActivity : AppCompatActivity(), MainListFragment.ClickedMovieListener 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         if (!isNetworkAvailable()){
             Toast.makeText(this, "No hay conexion a internet" , Toast.LENGTH_LONG).show()
         }

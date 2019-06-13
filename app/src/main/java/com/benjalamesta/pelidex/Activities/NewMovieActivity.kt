@@ -34,7 +34,7 @@ class NewMovieActivity : AppCompatActivity() {
 
         val layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
         val recyclerView = rv_preview
-        val moviesPreviewAdapter = RVPreviewAdapter(movies = AppConstants.emptymoviespreview,
+        val moviesPreviewAdapter = RVPreviewAdapter(movies = AppConstants.emptymoviespreview as List<MoviePreview>,
             clickListener = { movie: MoviePreview, checky: View ->
                 movie.selected = !movie.selected
                 Toast.makeText(this, if (movie.selected) "Selected ${movie.Title}" else "Unselected ${movie.Title}", Toast.LENGTH_SHORT).show()
@@ -54,11 +54,13 @@ class NewMovieActivity : AppCompatActivity() {
 
         bt_search.setOnClickListener {
             val movieNameQuery = et_search.text.toString()
-            if (movieNameQuery.isNotEmpty() && movieNameQuery.isNotBlank()) {
+            if (movieNameQuery.isNotEmpty() && movieNameQuery.isNotBlank() && isNetworkAvailable()) {
                 MovieViewModel.fetchMovie(movieNameQuery)
                 MovieViewModel.getMovieListVM().observe(this, Observer { result ->
                     moviesPreviewAdapter.changeDataSet(result)
                 })
+            }else{
+                Toast.makeText(this, "you cant search without internet connection" , Toast.LENGTH_LONG).show()
             }
         }
 
@@ -85,6 +87,12 @@ class NewMovieActivity : AppCompatActivity() {
     fun clearView(et: EditText, adapter: RVPreviewAdapter){
         et.text.clear()
         adapter.changeDataSet(AppConstants.emptymoviespreview)
+    }
+
+    private fun isNetworkAvailable(): Boolean {
+        val connectivityManager = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val activeNetworkInfo = connectivityManager.activeNetworkInfo
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected
     }
 
 
