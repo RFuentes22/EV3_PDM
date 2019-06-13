@@ -15,13 +15,8 @@ import com.benjalamesta.pelidex.Constants.AppConstants
 import com.benjalamesta.pelidex.Models.MoviePreview
 import com.benjalamesta.pelidex.ViewModel.MovieViewModel
 import kotlinx.android.synthetic.main.preview_add_movie.*
-import android.net.NetworkInfo
-import android.content.Context.CONNECTIVITY_SERVICE
-import androidx.core.content.ContextCompat.getSystemService
 import android.net.ConnectivityManager
-import android.R
 import android.content.Context
-import android.util.Log
 
 
 class NewMovieActivity : AppCompatActivity() {
@@ -52,8 +47,8 @@ class NewMovieActivity : AppCompatActivity() {
             moviesPreviewAdapter.changeDataSet(result)
         })
 
-        bt_search.setOnClickListener {
-            val movieNameQuery = et_search.text.toString()
+        bt_search_movie_preview.setOnClickListener {
+            val movieNameQuery = et_search_movie_preview.text.toString()
             if (movieNameQuery.isNotEmpty() && movieNameQuery.isNotBlank() && isNetworkAvailable()) {
                 MovieViewModel.fetchMovie(movieNameQuery)
                 MovieViewModel.getMovieListVM().observe(this, Observer { result ->
@@ -64,9 +59,9 @@ class NewMovieActivity : AppCompatActivity() {
             }
         }
 
-        bt_cancel.setOnClickListener {clearView(et_search, moviesPreviewAdapter)}
+        bt_cancel_preview.setOnClickListener {clearView(et_search_movie_preview, moviesPreviewAdapter)}
 
-        bt_add_preview.setOnClickListener {
+        bt_add_preview_search.setOnClickListener {
             val thenownow = MovieViewModel.getMovieListVM().value
             val selectedMovies = thenownow?.filter { it.selected } ?: AppConstants.emptymoviespreview
 
@@ -76,7 +71,7 @@ class NewMovieActivity : AppCompatActivity() {
                     MovieViewModel.insert(resultMovie)
                 })
             }
-            clearView(et_search, moviesPreviewAdapter)
+            clearView(et_search_movie_preview, moviesPreviewAdapter)
 
             setResult(Activity.RESULT_OK)
             finish()

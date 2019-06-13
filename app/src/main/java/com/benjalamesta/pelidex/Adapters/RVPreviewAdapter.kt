@@ -8,6 +8,8 @@ import com.benjalamesta.pelidex.Models.MoviePreview
 import com.benjalamesta.pelidex.R
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.cardview_preview.view.*
+import kotlinx.android.synthetic.main.cardview_preview.view.tv_rating_on_preview
+import kotlinx.android.synthetic.main.movie_viewer.view.*
 
 class RVPreviewAdapter(var movies: List<MoviePreview>, val clickListener: (MoviePreview, View) -> Unit ) : RecyclerView.Adapter<RVPreviewAdapter.ViewHolder>() {
 
@@ -30,9 +32,10 @@ class RVPreviewAdapter(var movies: List<MoviePreview>, val clickListener: (Movie
             Glide.with(itemView.context)
                 .load(movie.Poster)
                 .placeholder(R.drawable.ic_launcher_background)
-                .into(preview_image_cv)
-            preview_title_cv.text = movie.Title
-            preview_year_cv.text = movie.Year
+                .into(im_on_preview)
+            tv_rating_on_preview.text = movie.imdbRating
+            tv_title_on_preview.text = movie.Title
+            tv_preview_on_year.text = movie.Year
             if (movie.selected) preview_selected_cv.visibility = View.VISIBLE else preview_selected_cv.visibility = View.GONE
             this.setOnClickListener { clickListener(movie, preview_selected_cv) }
         }

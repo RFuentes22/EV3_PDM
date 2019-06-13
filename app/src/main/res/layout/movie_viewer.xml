@@ -32,7 +32,7 @@
                     android:padding="3dp"
                     android:scaleType="centerInside"
                     android:src="@drawable/ic_launcher_background"
-                    android:id="@+id/app_bar_image_viewer"
+                    android:id="@+id/iv_image_viewer"
                     android:layout_marginTop="60dp" android:layout_marginBottom="9dp" android:layout_marginLeft="7dp"
                     android:layout_marginStart="7dp" android:layout_marginRight="9dp" android:layout_marginEnd="9dp"
                     android:layout_alignParentStart="true" android:layout_alignParentLeft="true"/>
@@ -103,7 +103,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-light"
                         android:text="6.3"
-                        android:id="@+id/app_bar_rating_viewer"
+                        android:id="@+id/tv_rating_on_preview"
                         android:textColor="@color/white"
                         android:textSize="25sp"/>
 
@@ -192,7 +192,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="sans-serif-light"
-                            android:id="@+id/genre_viewer"
+                            android:id="@+id/tv_movie_genre"
                             android:text="the genre"
                             android:textColor="#000000"
                             android:textSize="18sp"/>
@@ -223,7 +223,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="sans-serif-light"
                             android:text="director name"
-                            android:id="@+id/director_viewer"
+                            android:id="@+id/tv_movie_director"
                             android:textColor="#000000"
                             android:textSize="18sp"/>
 
@@ -254,7 +254,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="sans-serif-light"
                             android:text="actors"
-                            android:id="@+id/actors_viewer"
+                            android:id="@+id/tv_movie_actors"
                             android:textColor="#000000"
                             android:textSize="18sp"/>
 
@@ -280,7 +280,7 @@
                             android:textSize="13sp"/>
 
                     <TextView
-                            android:id="@+id/plot_viewer"
+                            android:id="@+id/tv_movie_synopsis"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="sans-serif-light"

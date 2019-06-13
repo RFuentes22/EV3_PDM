@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.benjalamesta.pelidex.Database.Domain.MovieDao
+import com.benjalamesta.pelidex.Database.daos.MovieDao
 import com.benjalamesta.pelidex.Models.Movie
 
 @Database(entities = [Movie::class], version = 2, exportSchema = false)

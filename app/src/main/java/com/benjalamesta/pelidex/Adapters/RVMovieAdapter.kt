@@ -30,11 +30,11 @@ class RVMovieAdapter (var movies: List<Movie>, val clickListener: (Movie) -> Uni
             Glide.with(itemView.context)
                 .load(movie.Poster)
                 .placeholder(R.drawable.ic_launcher_background)
-                .into(movie_image_cv)
-            movie_title_cv.text = movie.Title
-            movie_plot_cv.text = movie.Plot
-            movie_rate_cv.text = movie.imdbRating
-            movie_runtime_cv.text = movie.Runtime
+                .into(iv_movie_logo)
+            tv_movie_title.text = movie.Title
+            tv_movie_synopsis.text = movie.Plot
+            tv_rating_rv.text = movie.imdbRating
+            tv_movie_runtime.text = movie.Runtime
             this.setOnClickListener { clickListener(movie) }
         }
     }

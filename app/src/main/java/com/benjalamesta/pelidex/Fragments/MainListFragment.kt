@@ -65,7 +65,7 @@ class MainListFragment : Fragment(){
 
     fun initRecyclerView(orientation: Int, container: View) {
         val linearLayoutManager = LinearLayoutManager(this.context)
-        val recyclerview  = container.rv_list
+        val recyclerview  = container.rv_list_searched_movies
 
         moviesAdapter = if (orientation == Configuration.ORIENTATION_PORTRAIT) {
             RVMovieAdapter(movies = AppConstants.emptymovies, clickListener = { movie: Movie -> listener?.managePortraitItemClick(movie)})

@@ -1,4 +1,4 @@
-package com.benjalamesta.pelidex.Database.Domain
+package com.benjalamesta.pelidex.Database.daos
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
@@ -15,8 +15,8 @@ interface MovieDao {
     suspend fun insertMovie(movie: Movie)
 
     @Query("select * from Movie")
-    fun loadAllMovies(): LiveData<List<Movie>>
+    fun getMovies(): LiveData<List<Movie>>
 
     @Query("select * from Movie where Title like :name")
-    fun searchMovieByName(name: String): LiveData<List<Movie>>
+    fun getMovieByName(name: String): LiveData<List<Movie>>
 }

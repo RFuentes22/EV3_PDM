@@ -2,7 +2,7 @@ package com.benjalamesta.pelidex.Repository
 
 import androidx.annotation.WorkerThread
 import androidx.lifecycle.LiveData
-import com.benjalamesta.pelidex.Database.Domain.MovieDao
+import com.benjalamesta.pelidex.Database.daos.MovieDao
 import com.benjalamesta.pelidex.Models.Movie
 import com.benjalamesta.pelidex.Models.OmbdMovieResponse
 import com.benjalamesta.pelidex.Network.OmbdApi
@@ -18,7 +18,7 @@ class MovieRepository(private val movieDao: MovieDao, private val api: OmbdApi){
     @WorkerThread
     suspend fun insert(movie: Movie) = movieDao.insertMovie(movie )
 
-    fun getAllfromRoomDB(): LiveData<List<com.benjalamesta.pelidex.Models.Movie>> = movieDao.loadAllMovies()
+    fun getAllfromRoomDB(): LiveData<List<com.benjalamesta.pelidex.Models.Movie>> = movieDao.getMovies()
 
-    fun getMovieByName(name: String) = movieDao.searchMovieByName(name)
+    fun getMovieByName(name: String) = movieDao.getMovieByName(name)
 }

@@ -31,13 +31,13 @@
 
                     android:scaleType="centerInside"
                     android:src="@drawable/ic_launcher_background"
-                    android:id="@+id/preview_image_cv"
+                    android:id="@+id/im_on_preview"
             />
 
         </RelativeLayout>
 
         <TextView
-                android:id="@+id/preview_title_cv"
+                android:id="@+id/tv_title_on_preview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/imgUser"
@@ -98,7 +98,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-light"
                         android:text="6.3"
-                        android:id="@+id/app_bar_rating_viewer"
+                        android:id="@+id/tv_rating_on_preview"
                         android:textColor="@color/white"
                         android:textSize="25sp" />
 
@@ -136,7 +136,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-light"
                         android:text="date released"
-                        android:id="@+id/preview_year_cv"
+                        android:id="@+id/tv_preview_on_year"
                         android:textColor="@color/white"
                         android:textSize="25sp" />
 

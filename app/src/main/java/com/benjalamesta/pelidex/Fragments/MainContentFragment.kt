@@ -36,15 +36,15 @@ class MainContentFragment: Fragment(){
         Glide.with(this)
             .load(data.Poster)
             .placeholder(R.drawable.ic_launcher_background)
-            .into(view.app_bar_image_viewer)
+            .into(view.iv_image_viewer)
 
         view.tv_movie_title.text = data.Title
-        view.plot_viewer.text = data.Plot
-        view.director_viewer.text = data.Director
-        view.actors_viewer.text = data.Actors
-        view.genre_viewer.text = data.Genre
+        view.tv_movie_synopsis.text = data.Plot
+        view.tv_movie_director.text = data.Director
+        view.tv_movie_actors.text = data.Actors
+        view.tv_movie_genre.text = data.Genre
         view.released_viewer.text = data.Released
-        view.app_bar_rating_viewer.text = data.imdbRating
+        view.tv_rating_on_preview.text = data.imdbRating
     }
 
 }

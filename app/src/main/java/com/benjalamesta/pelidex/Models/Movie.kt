@@ -26,7 +26,8 @@ data class MoviePreview(
     val imdbID: String = "N/A",
     val Type: String = "N/A",
     val Poster: String = "N/A",
-    var selected: Boolean = false
+    var selected: Boolean = false,
+    var imdbRating: String = "N/A"
 )
 
 data class OmbdMovieResponse (
